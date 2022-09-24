@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+
+
+:root{
+    --gradient: linear-gradient(94.47deg, #00FFFF 30.46%, #00ff99 99.9%);
+}
+
+body{
+    background-color: #111;
+    font-family: 'Manrope', sans-serif;
+    color: #fff;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    background: url(https://media.discordapp.net/attachments/818428719080538123/1023235509713117254/EkXiRw3U0AAqISl.jpg?width=1384&height=671) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+}
+
+.margin-content{
+    margin-top: 25vh;
+}
+
+.gradient-txt{
+    background-image: var(--gradient);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+    margin-bottom: -1.2rem;
+}
+
+.pfp{
+    border-radius: 7px;
+}
+
+.under-txt{
+    font-size: 17px;
+}
+
+.grey-link{
+    font-size: 28px;
+    color: #888;
+}
+
+.box{
+    background-color: rgba(0, 0, 0, 0.700);
+    padding: 80px;
+    border-radius: 7px;
+}
+
+@media (max-width: 400px){
+    .box{
+        padding: 30px;
+    }
+}
+
+.inf{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
