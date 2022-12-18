@@ -40,7 +40,6 @@
       </div>
     </div>
     <div class="inf">
-      <p>Made By Cacti4 & lonelil</p>
     </div>
   </body>
   <script defer>
@@ -52,7 +51,9 @@
 
         lonelilaf.data.activities.forEach((lonelil) => {
           lonelildev.push(
-            `${lonelil.name}, ${lonelil.details}, ${lonelil.state}`
+            `${lonelil.name}
+            ${lonelil.details}
+            ${lonelil.state}`
           );
         });
         statusMadeByLonelil.innerText = lonelildev.join("\n");
