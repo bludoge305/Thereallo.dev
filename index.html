@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thereallo</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="https://kit.fontawesome.com/cf16def632.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/cf16def632.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
     <div class="margin-content">
-    <div class="box">
-        <img class="pfp" src="https://cdn.discordapp.com/attachments/898928694704357427/1053202462699442196/101797831_p0_1111.jpg"></img>
+      <div class="box">
+        <img
+          class="pfp"
+          src="https://cdn.discordapp.com/attachments/898928694704357427/1053202462699442196/101797831_p0_1111.jpg"
+        />
         <h1><span class="gradient-txt">Thereallo</span></h1>
         <p class="under-txt">Unreliable Leaker</p>
+        <p id="discord-status-by-lonelildev">Loading Status...</p>
         <div class="links">
-            <a href="https://open.spotify.com/user/31nav4vofyrmsmvdxj5gqbnlqn4q?si=0a83bbe4a0094f99" class="grey-link"><i class="fa-brands fa-spotify"></i></a>
+          <a
+            href="https://open.spotify.com/user/31nav4vofyrmsmvdxj5gqbnlqn4q?si=0a83bbe4a0094f99"
+            class="grey-link"
+            ><i class="fa-brands fa-spotify"></i
+          ></a>
 
-            <a href="https://github.com/Thereallo1026" class="grey-link"><i class="fa-brands fa-github"></i></a>
+          <a href="https://github.com/Thereallo1026" class="grey-link"
+            ><i class="fa-brands fa-github"></i
+          ></a>
 
-            <a href="https://twitter.com/Thereallo6" class="grey-link"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://twitter.com/Thereallo6" class="grey-link"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
         </div>
-    </div>
+      </div>
     </div>
     <div class="inf">
-        <p>Made By Cacti4</p>
+      <p>Made By Cacti4 & lonelil</p>
     </div>
-</body>
-</html>
+  </body>
+  <script defer>
+    const statusMadeByLonelil = document.getElementById("discord-status-by-lonelildev");
+    fetch("https://api.lanyard.rest/v1/users/454920881177624576")
+      .then((res) => res.json())
+      .then((lonelilaf) => {
+        let lonelildev = [];
 
+        lonelilaf.data.activities.forEach((lonelil) => {
+          lonelildev.push(
+            `${lonelil.name}, ${lonelil.details}, ${lonelil.state}`
+          );
+        });
+        statusMadeByLonelil.innerText = lonelildev.join("\n");
+      });
+  </script>
+</html>
