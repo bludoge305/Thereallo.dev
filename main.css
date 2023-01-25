@@ -1,27 +1,27 @@
-@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
-
-
 :root{
     --gradient: linear-gradient(94.47deg, #A85CF9 30.46%, #4B7BE5 99.9%);
 }
 
 body{
     background-color: #111;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Google Sans', sans-serif;
     color: #fff;
-    text-align: center;
-    display: grid;
+    display: flex;
     justify-content: center;
-    background: url(https://media.discordapp.net/attachments/818428719080538123/1023235509713117254/EkXiRw3U0AAqISl.jpg?width=1384&height=671) no-repeat center center fixed; 
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background:url(https://cdn.discordapp.com/attachments/898928694704357427/1067790504936358029/104441567_p1.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     margin: 0;
+    
 }
 
 .margin-content{
-    margin-top: 25vh;
+    margin-top: 0vh;
 }
 
 .gradient-txt{
@@ -33,7 +33,7 @@ body{
 }
 
 .pfp{
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 .under-txt{
@@ -41,14 +41,15 @@ body{
 }
 
 .grey-link{
-    font-size: 28px;
-    color: #888;
+    font-size: 20px;
+    padding: 3px;
+    color: rgb(199, 197, 197);
 }
 
 .box{
     background-color: rgba(0, 0, 0, 0.700);
     padding: 80px;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 @media (max-width: 400px){
