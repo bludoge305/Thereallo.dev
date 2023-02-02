@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="#426098">
-    <meta name="title" content="Thereallo.dev">
-    <meta name="description" content="Bio or something">
+    <meta name="theme-color" content="#426098" />
+    <meta name="title" content="Thereallo.dev" />
+    <meta name="description" content="Bio or something" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thereallo | Bio</title>
     <link rel="stylesheet" href="main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/cf16def632.js"
       crossorigin="anonymous"
       defer
     ></script>
-  </head> 
+  </head>
   <body>
     <div class="margin-content">
       <div class="box">
@@ -24,9 +26,10 @@
           class="pfp"
           src="https://avatars.githubusercontent.com/u/64765950?v=3"
         />
-        <h1 style="margin: 0;">
-          <span class="gradient-txt">Thereallo</span></h1>
-        <p class="under-txt" style="margin-bottom: 5;">I'm surviving.</p>
+        <h1 style="margin: 0">
+          <span class="gradient-txt">Thereallo</span>
+        </h1>
+        <p class="under-txt" style="margin-bottom: 5">I'm surviving.</p>
         <p id="discord-status"></p>
         <div class="links">
           <a
@@ -34,16 +37,12 @@
             class="grey-link"
             ><i class="fa-brands fa-spotify"></i
           ></a>
-          <a
-          href="https://music.apple.com/profile/thereallo6"
-          class="grey-link"
-          ><i class="fa-brands fa-apple"></i
-        ></a>
-          <a
-            href="https://enka.network/u/Thereallo"
-            class="grey-link"
-            ><img src="enka.svg"></i
+          <a href="https://music.apple.com/profile/thereallo6" class="grey-link"
+            ><i class="fa-brands fa-apple"></i
           ></a>
+          <a href="https://enka.network/u/Thereallo" class="grey-link"
+            ><img src="enka.svg"
+          /></a>
           <a href="https://github.com/Thereallo1026" class="grey-link"
             ><i class="fa-brands fa-github"></i
           ></a>
@@ -54,27 +53,37 @@
         </div>
       </div>
     </div>
-    <div class="inf">
-    </div>
+    <div class="inf"></div>
   </body>
   <script defer>
     const status = document.getElementById("discord-status");
+    const pfp = document.getElementsByClassName("pfp")[0];
     fetch("https://api.lanyard.rest/v1/users/454920881177624576")
       .then((res) => res.json())
       .then((af) => {
         let discordstatus = [];
 
         af.data.activities.forEach((lonelil) => {
-          let name = lonelil.name || "Undefined";
-          let details = lonelil.details || "Undefined";
-          let state = lonelil.state || "Undefined";
+          let name = lonelil.name || null;
+          let details = lonelil.details || null;
+          let state = lonelil.state || null;
           discordstatus.push(`${name}
           ${details}
           ${state}
           `);
         });
+        pfp.style.border = `3px solid #${
+          af.data.discord_status == "online"
+            ? "3ba55d"
+            : af.data.discord_status == "idle"
+            ? "faa819"
+            : af.data.discord_status == "dnd"
+            ? "ed4043"
+            : af.data.discord_status == "offline"
+            ? "737e8c"
+            : null
+        }`;
         status.innerText = discordstatus.join("\n");
       });
   </script>
-
 </html>
