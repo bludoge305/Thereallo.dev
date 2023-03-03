@@ -13,7 +13,7 @@ body{
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background:url(https://cdn.discordapp.com/attachments/898928694704357427/1067790504936358029/104441567_p1.png) no-repeat center center fixed;
+    background:url(assets/wall.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
