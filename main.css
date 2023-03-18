@@ -1,14 +1,14 @@
 :root{
-    --purple: rgb(116, 0, 184);
-    --violet: rgb(83, 144, 217);
-    --blue: rgb(78, 168, 222);
+    --white: rgb(248, 255, 181);
+    --blue: rgb(153, 227, 253);
+    --pink: rgb(255, 157, 247);
 }
 
 body{
     background-color: #111;
     font-family: 'Google Sans', sans-serif;
     color: #fff;
-    display: flex;
+    display: fixed;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -44,33 +44,33 @@ body{
 }
 
 .grey-link{
-    font-size: 20px;
-    padding: 3px;
-    color: rgb(199, 197, 197);
+  font-size: 20px;
+  padding: 3px;
+  color: rgb(199, 197, 197);
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+}
+
+.grey-link:hover{
+  color: white;
+  background-color: transparent;
 }
 
 .box {
     /* From https://css.glass */
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 80px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.7);
     -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
     -moz-box-shadow: 0px 0px 15px 5px rgb(255, 255, 255);
     box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.75);
+    overflow: auto;
+    width: 300px;
   }
-  
-
-/*
-.box{
-    background-color: rgba(0, 0, 0, 0.700);
-    padding: 80px;
-    border-radius: 10px;
-}
-*/
 
 @media (max-width: 400px){
     .box{
@@ -125,49 +125,15 @@ body{
   
   h1 {
     color: white;
-    margin: 0px;
     font-size: 3rem;
+    font-family: 'Google Sans', monospace;
+    margin: 0px;
     text-align: center;
-  }
-  
-  h1 > .magic {
-    display: inline-block;
-    position: relative;
-  }
-  
-  h1 > .magic > .magic-star {
-    --size: clamp(20px, 1.5vw, 30px);
-    
-    animation: scale 700ms ease forwards;
-    display: block;
-    height: var(--size);
-    left: var(--star-left);
-    position: absolute;
-    top: var(--star-top);
-    width: var(--size);
-  }
-  
-  h1 > .magic > .magic-star > svg {
-    animation: rotate 1000ms linear infinite;
-    display: block;
-    opacity: 0.7;
-  }
-  
-  h1 > .magic > .magic-star > svg > path {
-    fill: var(--violet);
-  }
-  
-  h1 > .magic > .magic-text {
-    animation: background-pan 3s linear infinite;
-    background: linear-gradient(
-      to right,
-      var(--purple),
-      var(--violet),
-      var(--blue),
-      var(--purple)
-    );
+    white-space: nowrap;
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    background: linear-gradient(to right, var(--white), var(--blue), var(--pink), var(--white));
     background-size: 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    white-space: nowrap;
+    animation: background-pan 3s linear infinite;
   }
