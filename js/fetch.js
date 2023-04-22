@@ -9,10 +9,16 @@ fetch("https://api.lanyard.rest/v1/users/454920881177624576")
       let name = lonelil.name || null;
       let details = lonelil.details || null;
       let state = lonelil.state || null;
-      discordstatus.push(`${name}
-      ${details}
-      ${state}
-      `);
+      if (name) {
+        discordstatus.push(name);
+      }
+      if (details) {
+        discordstatus.push(details);
+      }
+      if (state) {
+        discordstatus.push(state);
+      }
+      discordstatus.push("");
     });
     pfp.style.border = `3px solid #${
       af.data.discord_status == "online"
